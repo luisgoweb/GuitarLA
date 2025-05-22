@@ -38,6 +38,17 @@ import type { CartItem, guitar } from "../types"
                 setCart(updateCart)
                 
             }
+
+            const decreaseQuantity = (id: guitar['id']) => {
+                const updateCart = cart.map(guitar => {
+                    if(guitar.id === id && guitar.quantity > MIN_ITEM){
+                        return {...guitar, quantity: guitar.quantity - 1}
+                    }
+                    return guitar
+                })
+                setCart(updateCart)
+                
+            }
             
 
         return{
@@ -46,6 +57,7 @@ import type { CartItem, guitar } from "../types"
             setCart,
             addToCart,
             deleteToCart,
-            increaseQuantity
+            increaseQuantity,
+            decreaseQuantity
         }
     }
