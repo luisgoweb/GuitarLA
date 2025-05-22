@@ -1,4 +1,4 @@
-export type Guitar = {
+export type guitar = {
     id: number
     name: string
     image: string
