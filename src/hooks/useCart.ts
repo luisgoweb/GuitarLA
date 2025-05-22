@@ -1,11 +1,20 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { db } from "../data/db"
 import type { CartItem, guitar } from "../types"
 
     export const useCart = () => {
 
+        const initialState = () => {
+            const getLocalstorage = localStorage.getItem('cart')
+            return getLocalstorage ? JSON.parse(getLocalstorage) : []
+        }
+
         const[data] = useState(db)
-        const[cart, setCart] = useState<CartItem[]>([])
+        const[cart, setCart] = useState<CartItem[]>(initialState)
+
+        useEffect(()=>{
+            localStorage.setItem('cart', JSON.stringify(cart))
+        },[cart])
 
         //Cantidad maxima carrito
         const MAX_ITEM = 5;
