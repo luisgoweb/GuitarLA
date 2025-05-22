@@ -6,3 +6,7 @@ export type guitar = {
     price: number
 }
 
+export type CartItem = guitar & {
+    quantity: number
+}
+

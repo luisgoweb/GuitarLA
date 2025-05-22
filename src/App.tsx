@@ -3,7 +3,7 @@ import Header from "./components/Header"
 import { useCart } from "./hooks/useCart"
 
 function App() {
-  const {data} = useCart()
+  const {data, addToCart} = useCart()
 
   return (
     <>
@@ -17,6 +17,7 @@ function App() {
             <Guitar 
             key={guitar.id}
             guitar={guitar}
+            addToCart={addToCart}
             />
           ))}
             
