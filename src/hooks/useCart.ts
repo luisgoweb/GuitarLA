@@ -23,6 +23,8 @@ import type { CartItem, guitar } from "../types"
 
         return{
             data,
+            cart,
+            setCart,
             addToCart
         }
     }

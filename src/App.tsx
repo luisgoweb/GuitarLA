@@ -3,11 +3,14 @@ import Header from "./components/Header"
 import { useCart } from "./hooks/useCart"
 
 function App() {
-  const {data, addToCart} = useCart()
+  const {data, cart, setCart, addToCart} = useCart()
 
   return (
     <>
-       <Header />
+       <Header 
+        cart={cart}
+        setCart={setCart}
+       />
 
     <main className="container-xl mt-5">
         <h2 className="text-center">Nuestra Colección</h2>
