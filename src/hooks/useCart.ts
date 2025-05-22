@@ -19,12 +19,17 @@ import type { CartItem, guitar } from "../types"
                 setCart([...cart, newItem])
         }
             }
+
+            const deleteToCart = (id: guitar['id']) => {
+                setCart(prevCart => prevCart.filter(item => item.id !== id))
+            }
             
 
         return{
             data,
             cart,
             setCart,
-            addToCart
+            addToCart,
+            deleteToCart
         }
     }

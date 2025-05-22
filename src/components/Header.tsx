@@ -1,11 +1,12 @@
-import type { CartItem } from "../types"
+import type { CartItem, guitar } from "../types"
 
 type HeaderProps = {
     cart: CartItem[]
     setCart: React.Dispatch<React.SetStateAction<CartItem[]>>
+    deleteToCart: (id: guitar["id"]) => void
 }
 
-const Header = ({cart, setCart}: HeaderProps) => {
+const Header = ({cart, setCart, deleteToCart}: HeaderProps) => {
     const cartTotal = () => cart.reduce((total, item) => total + (item.price * item.quantity), 0)
   return (
     <header className="py-5 header">
@@ -66,6 +67,7 @@ const Header = ({cart, setCart}: HeaderProps) => {
                                                         </td>
                                                         <td>
                                                             <button
+                                                                onClick={()=> deleteToCart(guitar.id) }
                                                                 className="btn btn-danger"
                                                                 type="button"
                                                             >
