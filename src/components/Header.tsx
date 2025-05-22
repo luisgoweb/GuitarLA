@@ -4,9 +4,10 @@ type HeaderProps = {
     cart: CartItem[]
     setCart: React.Dispatch<React.SetStateAction<CartItem[]>>
     deleteToCart: (id: guitar["id"]) => void
+    increaseQuantity: (id: guitar['id']) => void
 }
 
-const Header = ({cart, setCart, deleteToCart}: HeaderProps) => {
+const Header = ({cart, setCart, deleteToCart, increaseQuantity}: HeaderProps) => {
     const cartTotal = () => cart.reduce((total, item) => total + (item.price * item.quantity), 0)
   return (
     <header className="py-5 header">
@@ -59,6 +60,7 @@ const Header = ({cart, setCart, deleteToCart}: HeaderProps) => {
                                                             </button>
                                                                 {guitar.quantity}
                                                             <button
+                                                                onClick={()=> increaseQuantity(guitar.id)}
                                                                 type="button"
                                                                 className="btn btn-dark"
                                                             >

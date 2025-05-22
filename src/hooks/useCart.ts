@@ -7,6 +7,10 @@ import type { CartItem, guitar } from "../types"
         const[data] = useState(db)
         const[cart, setCart] = useState<CartItem[]>([])
 
+        //Cantidad maxima carrito
+        const MAX_ITEM = 5;
+        const MIN_ITEM = 1;
+
         const addToCart = (item: guitar) => {
 
             const itemExist = cart.findIndex(guitar => guitar.id === item.id)
@@ -23,6 +27,17 @@ import type { CartItem, guitar } from "../types"
             const deleteToCart = (id: guitar['id']) => {
                 setCart(prevCart => prevCart.filter(item => item.id !== id))
             }
+
+            const increaseQuantity = (id: guitar['id']) => {
+                const updateCart = cart.map(guitar => {
+                    if(guitar.id === id && guitar.quantity < MAX_ITEM){
+                        return {...guitar, quantity: guitar.quantity + 1}
+                    }
+                    return guitar
+                })
+                setCart(updateCart)
+                
+            }
             
 
         return{
@@ -30,6 +45,7 @@ import type { CartItem, guitar } from "../types"
             cart,
             setCart,
             addToCart,
-            deleteToCart
+            deleteToCart,
+            increaseQuantity
         }
     }
