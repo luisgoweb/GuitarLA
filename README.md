@@ -52,7 +52,7 @@ Páginas de Detalles de Producto: Información más detallada para cada guitarra
 Filtros y Búsqueda de Productos: Mejorar la navegación y el descubrimiento.
 
 🧑‍💻 Conéctate Conmigo
-¡Gracias por visitar mi proyecto! Estoy activamente buscando mi primera oportunidad en el mundo del desarrollo web. Si tienes alguna pregunta, comentario o una oportunidad interesante, no dudes en contactarme:
+¡Gracias por visitar mi proyecto! Estoy activamente buscando oportunidad laboral en el mundo del desarrollo web. Si tienes alguna pregunta, comentario o una oportunidad interesante, no dudes en contactarme:
 
 GitHub: https://github.com/luisgoweb
 LinkedIn: https://www.linkedin.com/in/luis-gonzalez-dev-full-stack/
