@@ -2,7 +2,6 @@
 
 ¡Bienvenido a GuitarLA, tu destino online para encontrar la guitarra perfecta! Este proyecto es una landing page interactiva para una tienda de guitarras, desarrollada con React y TypeScript, que simula la experiencia de compra de un e-commerce.
 
-Este es mi primer proyecto personal de mayor envergadura y representa una aplicación práctica de los conocimientos que he adquirido en el desarrollo front-end. ¡Espero que te guste!
 
 🚀 ¡Explora el Proyecto!
 Puedes ver la aplicación desplegada y funcionando en Netlify aquí:
