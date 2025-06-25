@@ -1,3 +1,4 @@
+import { useMemo } from "react"
 import type { CartItem, guitar } from "../types"
 
 type HeaderProps = {
@@ -9,7 +10,9 @@ type HeaderProps = {
 }
 
 const Header = ({cart, setCart, deleteToCart, increaseQuantity, decreaseQuantity}: HeaderProps) => {
-    const cartTotal = () => cart.reduce((total, item) => total + (item.price * item.quantity), 0)
+
+    const cartTotal = useMemo(() => cart.reduce((total, item) => total + (item.price * item.quantity), 0),[cart])
+
   return (
     <header className="py-5 header">
         <div className="container-xl">
@@ -83,7 +86,7 @@ const Header = ({cart, setCart, deleteToCart, increaseQuantity, decreaseQuantity
                                         </tbody>
                                     </table>
 
-                                    <p className="text-end">Total pagar: <span className="fw-bold">${cartTotal()}</span></p>
+                                    <p className="text-end">Total pagar: <span className="fw-bold">${cartTotal}</span></p>
                                     <button onClick={()=> setCart([])} className="btn btn-dark w-100 mt-3 p-2">Vaciar Carrito</button>
                         
                         </>

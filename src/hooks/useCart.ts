@@ -19,18 +19,7 @@ import type { CartItem, guitar } from "../types"
         const MAX_ITEM = 5;
         const MIN_ITEM = 1;
 
-        const addToCart = (item: guitar) => {
-
-            const itemExist = cart.findIndex(guitar => guitar.id === item.id)
-            if(itemExist >= 0){
-                const updateCart = [...cart]
-                updateCart[itemExist].quantity++
-                setCart(updateCart)
-            }else{
-                const newItem: CartItem = {...item, quantity: 1}
-                setCart([...cart, newItem])
-        }
-            }
+        
 
             const deleteToCart = (id: guitar['id']) => {
                 setCart(prevCart => prevCart.filter(item => item.id !== id))
@@ -63,7 +52,6 @@ import type { CartItem, guitar } from "../types"
            
             cart,
             setCart,
-            addToCart,
             deleteToCart,
             increaseQuantity,
             decreaseQuantity
