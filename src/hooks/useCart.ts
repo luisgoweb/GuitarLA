@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react"
-import { db } from "../data/db"
 import type { CartItem, guitar } from "../types"
 
     export const useCart = () => {
@@ -9,7 +8,7 @@ import type { CartItem, guitar } from "../types"
             return getLocalstorage ? JSON.parse(getLocalstorage) : []
         }
 
-        const[data] = useState(db)
+     
         const[cart, setCart] = useState<CartItem[]>(initialState)
 
         useEffect(()=>{
@@ -61,7 +60,7 @@ import type { CartItem, guitar } from "../types"
             
 
         return{
-            data,
+           
             cart,
             setCart,
             addToCart,
