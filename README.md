@@ -17,7 +17,7 @@ Limpiar Carrito: Vacía el carrito completamente.
 Subtotal Dinámico: Calcula el precio total de los productos en el carrito en tiempo real.
 Incrementar/Decrementar Cantidades: Ajusta la cantidad de cada producto en el carrito.
 
-💡 Lógica Centralizada en un Custom Hook: Toda la lógica del carrito (agregar, eliminar, actualizar cantidades, calcular subtotal, etc.) está encapsulada en un hook personalizado. Esto garantiza la reutilización de código, mantiene el componente principal limpio y facilita la escalabilidad.
+💡 Lógica Centralizada en useReducer: Toda la lógica del carrito (agregar, eliminar, actualizar cantidades, calcular subtotal, etc.)
 
 🔄 Manejo del Estado con React Hooks:
 useState: Para gestionar el estado local de los componentes.
