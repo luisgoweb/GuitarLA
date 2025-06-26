@@ -2,7 +2,6 @@
 
 ¡Bienvenido a GuitarLA, tu destino online para encontrar la guitarra perfecta! Este proyecto es una landing page interactiva para una tienda de guitarras, desarrollada con React y TypeScript, que simula la experiencia de compra de un e-commerce.
 
-
 🚀 ¡Explora el Proyecto!
 Puedes ver la aplicación desplegada y funcionando en Netlify aquí:
 
@@ -22,6 +21,7 @@ Incrementar/Decrementar Cantidades: Ajusta la cantidad de cada producto en el ca
 
 🔄 Manejo del Estado con React Hooks:
 useState: Para gestionar el estado local de los componentes.
+useReducer: Para menejar toda la logíca y estados mas complejos
 useEffect: Para manejar efectos secundarios, como la interacción con localStorage.
 useMemo: Optimización del rendimiento al memorizar valores calculados, como el subtotal del carrito.
 
@@ -43,12 +43,6 @@ npm run dev
 
 💡 Próximas Funcionalidades (Roadmap)
 Este proyecto está en constante evolución. En futuras versiones, planeo agregar las siguientes funcionalidades para mejorar la experiencia del usuario y expandir las capacidades de la tienda:
-
-Integración con useContext y useReducer: Mejorar la gestión del estado global del carrito, combinando estas herramientas con el custom hook existente para un manejo más eficiente y escalable de la lógica del carrito.
-Autenticación de Usuarios: Registro e inicio de sesión.
-Base de Datos para almacenar productos y usuarios.
-Páginas de Detalles de Producto: Información más detallada para cada guitarra.
-Filtros y Búsqueda de Productos: Mejorar la navegación y el descubrimiento.
 
 🧑‍💻 Conéctate Conmigo
 ¡Gracias por visitar mi proyecto! Estoy activamente buscando oportunidad laboral en el mundo del desarrollo web. Si tienes alguna pregunta, comentario o una oportunidad interesante, no dudes en contactarme:
