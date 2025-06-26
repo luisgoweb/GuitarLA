@@ -1,15 +1,13 @@
-import { useMemo } from "react"
-import type { CartItem, guitar } from "../types"
+import { useMemo, type Dispatch } from "react"
+import type { CartActions } from "../reducers/cart-reducer"
+import type { CartItem } from "../types"
 
 type HeaderProps = {
     cart: CartItem[]
-    setCart: React.Dispatch<React.SetStateAction<CartItem[]>>
-    deleteToCart: (id: guitar["id"]) => void
-    increaseQuantity: (id: guitar['id']) => void
-    decreaseQuantity: (id: guitar["id"]) => void
+    dispatch: Dispatch<CartActions>
 }
 
-const Header = ({cart, setCart, deleteToCart, increaseQuantity, decreaseQuantity}: HeaderProps) => {
+const Header = ({cart, dispatch}: HeaderProps) => {
 
     const cartTotal = useMemo(() => cart.reduce((total, item) => total + (item.price * item.quantity), 0),[cart])
 
@@ -57,7 +55,7 @@ const Header = ({cart, setCart, deleteToCart, increaseQuantity, decreaseQuantity
                                                         </td>
                                                         <td className="flex align-items-start gap-4">
                                                             <button
-                                                                onClick={()=> decreaseQuantity(guitar.id)}
+                                                                onClick={()=> dispatch({type: 'decreaseQuantity', payload: {id: guitar.id}})}
                                                                 type="button"
                                                                 className="btn btn-dark"
                                                             >
@@ -65,7 +63,7 @@ const Header = ({cart, setCart, deleteToCart, increaseQuantity, decreaseQuantity
                                                             </button>
                                                                 {guitar.quantity}
                                                             <button
-                                                                onClick={()=> increaseQuantity(guitar.id)}
+                                                                onClick={()=> dispatch({type: 'increaseQuantity', payload: {id: guitar.id}})}
                                                                 type="button"
                                                                 className="btn btn-dark"
                                                             >
@@ -74,7 +72,7 @@ const Header = ({cart, setCart, deleteToCart, increaseQuantity, decreaseQuantity
                                                         </td>
                                                         <td>
                                                             <button
-                                                                onClick={()=> deleteToCart(guitar.id) }
+                                                                onClick={()=> dispatch({type: 'deleteToCart', payload: {id: guitar.id}}) }
                                                                 className="btn btn-danger"
                                                                 type="button"
                                                             >
@@ -87,7 +85,7 @@ const Header = ({cart, setCart, deleteToCart, increaseQuantity, decreaseQuantity
                                     </table>
 
                                     <p className="text-end">Total pagar: <span className="fw-bold">${cartTotal}</span></p>
-                                    <button onClick={()=> setCart([])} className="btn btn-dark w-100 mt-3 p-2">Vaciar Carrito</button>
+                                    <button onClick={()=> dispatch({type: 'clear-cart'})} className="btn btn-dark w-100 mt-3 p-2">Vaciar Carrito</button>
                         
                         </>
                         )}
